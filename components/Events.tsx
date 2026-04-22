@@ -1,37 +1,30 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 export default function Events() {
   return (
-    <div
-      id="events"
-      className="py-32 px-6 md:px-20 text-center bg-black"
-    >
+    <>
+      {/* TEXT */}
+      <section className="h-screen flex items-center justify-center text-white bg-black px-6 text-center">
+        <div>
+          <h2 className="text-5xl font-bold mb-6">Platform & Activation</h2>
+          <p className="text-gray-300 mb-6">
+            Launch your brand and engage millions.
+          </p>
 
-      {/* 🔥 Animation Wrapper */}
-      <motion.div
-        initial={{ opacity: 0, y: 80 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        viewport={{ once: true }}
-      >
+          <button className="bg-white text-black px-6 py-3 rounded-full font-bold">
+            Start Partnership
+          </button>
+        </div>
+      </section>
 
-        {/* ✅ STRONG BUSINESS CTA (FIXED HERE) */}
-        <h2 className="text-4xl md:text-6xl font-semibold tracking-tight mb-6">
-          Partner With a Global Icon
-        </h2>
-
-        <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-          Launch your brand, host world-class events, and connect with millions of visitors in one of the most iconic destinations in the world.
-        </p>
-
-        <button className="bg-white text-black px-8 py-3 rounded-full font-bold hover:scale-105 transition">
-          Start Partnership
-        </button>
-
-      </motion.div>
-
-    </div>
+      {/* IMAGE */}
+      <section className="h-screen">
+        <img
+          src="/images/events.jpg"
+          className="w-full h-full object-cover"
+          alt="Events"
+        />
+      </section>
+    </>
   );
 }

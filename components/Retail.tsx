@@ -1,35 +1,26 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 export default function Retail() {
   return (
-    <div id="retail" className="py-32 px-6 md:px-20">
+    <>
+      {/* TEXT */}
+      <section className="h-screen flex items-center justify-center text-white bg-black px-6 text-center">
+        <div>
+          <h2 className="text-5xl font-bold mb-6">Retail Ecosystem</h2>
+          <p className="text-gray-300">
+            A curated mix of global brands and luxury retail experiences.
+          </p>
+        </div>
+      </section>
 
-      <motion.div
-        initial={{ opacity: 0, y: 80 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        viewport={{ once: true }}
-      >
-
-       <h2 className="text-4xl md:text-6xl font-semibold tracking-tight mb-6">
-  A Global Retail Powerhouse
-</h2>
-
-        <p className="text-gray-300 max-w-xl">
-          Home to 1,200+ world-class brands, offering unmatched shopping experiences.
-        </p>
-
-        {/* 🔥 IMAGE FIX HERE */}
+      {/* IMAGE */}
+      <section className="h-screen">
         <img
           src="/images/retail.jpg"
-          className="rounded-xl mt-8 w-full object-cover"
+          className="w-full h-full object-cover"
           alt="Retail"
         />
-
-      </motion.div>
-
-    </div>
+      </section>
+    </>
   );
 }

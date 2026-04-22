@@ -1,59 +1,36 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-
 export default function Hero() {
-  const [offset, setOffset] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setOffset(window.scrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <div className="relative h-screen w-full overflow-hidden">
+    <section className="relative h-screen w-full">
 
       {/* 🎥 Background Video */}
       <video
         autoPlay
         loop
         muted
-        style={{ transform: `translateY(${offset * 0.3}px)` }}
-        className="absolute w-full h-full object-cover"
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover z-0"
       >
         <source src="/videos/dubai-mall.mp4" type="video/mp4" />
       </video>
 
-      {/* 🔥 Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black" />
+      {/* 🌑 Overlay */}
+      <div className="absolute inset-0 bg-black/60 z-10" />
 
-      {/* ✨ TEXT CONTENT (FIX IS HERE) */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="text-center px-6"
-        >
-
-          {/* ✅ UPDATED TEXT */}
-          <h1 className="text-4xl md:text-6xl font-semibold tracking-tight">
-            The World’s Most Visited Destination
+      {/* 📝 Text */}
+      <div className="relative z-20 flex items-center justify-center h-full text-center px-6 text-white">
+        <div>
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+            A Global Destination at Unmatched Scale
           </h1>
 
-          <p className="mt-4 text-lg text-gray-300">
-            100+ million visitors annually. 1,200+ global brands. One iconic destination.
+          <p className="text-lg text-gray-300">
+            100M+ visitors. 1,200+ brands. A global platform.
           </p>
-
-        </motion.div>
+        </div>
       </div>
 
-    </div>
+    </section>
   );
 }
